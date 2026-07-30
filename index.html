@@ -345,6 +345,24 @@ h1,h2,.statement .big{font-family:var(--hero-display)}
 @keyframes reel{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.reel{overflow-x:auto}.reel-track{animation:none}}
 
+/* video reel — take a tour (manual scroll; add more .vcard blocks later) */
+.vreel{display:flex;gap:clamp(16px,2vw,28px);margin-top:clamp(40px,5vw,64px);
+  overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:8px}
+.vcard{position:relative;flex:0 0 auto;scroll-snap-align:start;
+  width:clamp(230px,26vw,320px);border-radius:6px;overflow:hidden;
+  background:#1a2416;box-shadow:0 16px 46px rgba(0,0,0,.22)}
+.vcard video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#1a2416}
+.vplay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+  background:linear-gradient(180deg,rgba(20,28,16,.12),rgba(20,28,16,.5));border:0;cursor:pointer;transition:opacity .4s ease}
+.vplay .disc{width:clamp(56px,6vw,72px);aspect-ratio:1;border-radius:50%;background:rgba(201,166,96,.94);
+  display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3);transition:transform .3s ease}
+.vplay .disc::before{content:"";width:0;height:0;margin-left:5px;
+  border-left:clamp(16px,1.7vw,22px) solid var(--ink);
+  border-top:clamp(10px,1vw,13px) solid transparent;border-bottom:clamp(10px,1vw,13px) solid transparent}
+.vplay:hover .disc{transform:scale(1.08)}
+.vplay-label{font-family:var(--sans);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--paper)}
+.vcard.playing .vplay{opacity:0;pointer-events:none}
+
 /* pull quote */
 .pull{
   position:relative;overflow:hidden;
@@ -554,6 +572,26 @@ footer a:hover{color:var(--gold-light)}
       <img src="images/gallery/g4.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
       <img src="images/gallery/g5.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
       <img src="images/gallery/g6.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<!-- ============ TAKE A TOUR ============ -->
+<section class="section" id="tour">
+  <div class="wrap">
+    <p class="eyebrow rv">Take a tour</p>
+    <h2 class="rv" style="max-width:16ch">See what is happening now</h2>
+    <div class="vreel rv">
+      <div class="vcard">
+        <video preload="none" playsinline controls poster="videos/main-tour-poster.jpg">
+          <source src="videos/main-tour.mp4" type="video/mp4">
+        </video>
+        <button class="vplay" type="button" aria-label="Play the tour">
+          <span class="disc" aria-hidden="true"></span>
+          <span class="vplay-label">Watch the tour</span>
+        </button>
+      </div>
+      <!-- add more <div class="vcard">…</div> blocks here as tours are added -->
     </div>
   </div>
 </section>
@@ -861,6 +899,19 @@ footer a:hover{color:var(--gold-light)}
     });
   }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
   items.forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.vcard').forEach(function(card){
+    var v = card.querySelector('video'), b = card.querySelector('.vplay');
+    if(!v || !b) return;
+    b.addEventListener('click', function(){ v.play(); });
+    v.addEventListener('play',  function(){ card.classList.add('playing'); });
+    v.addEventListener('pause', function(){ card.classList.remove('playing'); });
+    v.addEventListener('ended', function(){ card.classList.remove('playing'); });
+  });
 })();
 </script>
 </body>
