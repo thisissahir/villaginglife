@@ -335,12 +335,20 @@ h1,h2,.statement .big{font-family:var(--hero-display)}
 
 /* pull quote */
 .pull{
-  padding:clamp(70px,9vw,140px) var(--pad);background:var(--sage-mid);
+  position:relative;overflow:hidden;
+  padding:clamp(96px,13vw,190px) var(--pad);
+  background:var(--sage-mid) url('images/village-field.jpg') center/cover no-repeat;
   border-top:0;border-bottom:0
 }
+.pull::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(28,38,23,.5) 0%,rgba(38,49,31,.66) 55%,rgba(24,33,20,.74) 100%)
+}
 .pull blockquote{
+  position:relative;z-index:1;
   margin:0 auto;max-width:1000px;text-align:center;
-  font-family:var(--serif);font-size:clamp(27px,3.5vw,52px);line-height:1.3;font-style:italic;font-weight:300;color:#fff
+  font-family:var(--serif);font-size:clamp(27px,3.5vw,52px);line-height:1.3;font-style:italic;font-weight:300;color:#fff;
+  text-shadow:0 2px 30px rgba(15,22,12,.45)
 }
 .pull .attrib{
   display:block;margin-top:34px;font-family:var(--sans);font-style:normal;
