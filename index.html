@@ -789,10 +789,7 @@ body.intro-lock{overflow:hidden}
   function remove(){ if(intro && intro.parentNode) intro.parentNode.removeChild(intro); document.body.classList.remove('intro-lock'); }
 
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var played = false;
-  try{ played = sessionStorage.getItem('tggl_intro') === '1'; }catch(e){}
-  if(reduce || played){ remove(); return; }
-  try{ sessionStorage.setItem('tggl_intro','1'); }catch(e){}
+  if(reduce){ remove(); return; }   /* plays on every load; skipped only for reduced-motion */
   document.body.classList.add('intro-lock');
 
   var $ = function(id){ return document.getElementById(id); };
