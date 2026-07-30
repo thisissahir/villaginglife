@@ -1,5 +1,7 @@
 # Large source media — only the compressed web versions in images/ and videos/ are committed
 MAIN TOUR .MP4
+/*.mp4
+/*.MP4
 *.MOV
 *.HEIC
 *.zip
