@@ -333,6 +333,18 @@ h1,h2,.statement .big{font-family:var(--hero-display)}
 .way.in .way-sym .f{animation:sym-fade .6s ease .15s forwards}
 @keyframes sym-fade{to{opacity:1}}
 
+/* movement reel — auto-scrolling photo gallery */
+.reel{margin-top:clamp(48px,6vw,84px);overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.reel-track{display:flex;width:max-content;animation:reel 48s linear infinite}
+.reel:hover .reel-track{animation-play-state:paused}
+.reel-track img{height:clamp(230px,32vw,400px);width:auto;flex:0 0 auto;
+  margin-right:clamp(12px,1.4vw,20px);object-fit:cover;border-radius:3px;
+  box-shadow:0 14px 44px rgba(0,0,0,.38)}
+@keyframes reel{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.reel{overflow-x:auto}.reel-track{animation:none}}
+
 /* pull quote */
 .pull{
   position:relative;overflow:hidden;
@@ -443,6 +455,7 @@ footer a:hover{color:var(--gold-light)}
   </a>
   <nav class="navlinks" aria-label="Primary">
     <a href="#villaging">What is villaging</a>
+    <a href="#movement">The Movement</a>
     <a href="#why">Why now</a>
     <a href="#participate">Participate</a>
     <a href="#belonging">Belonging</a>
@@ -518,12 +531,39 @@ footer a:hover{color:var(--gold-light)}
   </div>
 </section>
 
+<!-- ============ THE MOVEMENT ============ -->
+<section class="section dark" id="movement">
+  <div class="wrap">
+    <p class="eyebrow rv">02 — The Movement</p>
+    <h2 class="rv" style="max-width:14ch">It is happening now</h2>
+    <div class="narrow" style="margin-top:34px">
+      <p class="lead rv">This is not an idea waiting to begin. It is already alive. People on the land, together, now.</p>
+    </div>
+  </div>
+  <div class="reel rv" role="img" aria-label="Photographs from the land at Villaging Life">
+    <div class="reel-track">
+      <img src="images/gallery/g1.jpg" alt="On the land at Villaging Life near Asheville" loading="lazy" decoding="async">
+      <img src="images/gallery/g2.jpg" alt="Gathering on the land" loading="lazy" decoding="async">
+      <img src="images/gallery/g3.jpg" alt="Time in the field" loading="lazy" decoding="async">
+      <img src="images/gallery/g4.jpg" alt="Together on the land" loading="lazy" decoding="async">
+      <img src="images/gallery/g5.jpg" alt="The land and those who tend it" loading="lazy" decoding="async">
+      <img src="images/gallery/g6.jpg" alt="A day in the field" loading="lazy" decoding="async">
+      <img src="images/gallery/g1.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img src="images/gallery/g2.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img src="images/gallery/g3.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img src="images/gallery/g4.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img src="images/gallery/g5.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img src="images/gallery/g6.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
 <!-- ============ WHY NOW ============ -->
 <section class="section cream" id="why">
   <div class="wrap">
     <div class="two">
       <div class="side">
-        <p class="eyebrow rv">02 — The moment</p>
+        <p class="eyebrow rv">03 — The moment</p>
         <h2 class="rv">Why now?</h2>
         <hr class="rule rv" style="margin-top:34px">
       </div>
@@ -588,7 +628,7 @@ footer a:hover{color:var(--gold-light)}
 <!-- ============ PARTICIPATE ============ -->
 <section class="section" id="participate">
   <div class="wrap">
-    <p class="eyebrow rv">03 — Participation</p>
+    <p class="eyebrow rv">04 — Participation</p>
     <h2 class="rv" style="max-width:16ch">How you can participate</h2>
     <div class="narrow" style="margin-top:38px">
       <p class="lead rv">Villaging Life is unfolding one step at a time. There are limitless ways to participate, and different people feel called in different ways. What matters is not the role. It is the willingness to take part.</p>
@@ -630,7 +670,7 @@ footer a:hover{color:var(--gold-light)}
   <div class="wrap">
     <div class="two">
       <div class="side">
-        <p class="eyebrow rv">04 — The organism</p>
+        <p class="eyebrow rv">05 — The organism</p>
         <h2 class="rv">A living<br>organism</h2>
         <hr class="rule rv" style="margin-top:34px">
       </div>
@@ -649,7 +689,7 @@ footer a:hover{color:var(--gold-light)}
   <div class="wrap">
     <div class="two">
       <div class="side">
-        <p class="eyebrow rv">05 — Belonging</p>
+        <p class="eyebrow rv">06 — Belonging</p>
         <h2 class="rv">Fitting in,<br>or being<br>received</h2>
         <hr class="rule rv" style="margin-top:34px">
       </div>
@@ -668,7 +708,7 @@ footer a:hover{color:var(--gold-light)}
 <!-- ============ WHAT IT LOOKS LIKE ============ -->
 <section class="section dark">
   <div class="wrap">
-    <p class="eyebrow rv">06 — Any given day</p>
+    <p class="eyebrow rv">07 — Any given day</p>
     <h2 class="rv" style="max-width:18ch">What does villaging look like?</h2>
     <div class="narrow" style="margin-top:36px">
       <p class="lead rv" style="font-style:italic;color:var(--gold-pale)">It looks different every day.</p>
@@ -722,7 +762,7 @@ footer a:hover{color:var(--gold-light)}
         </svg>
       </div>
       <div>
-        <p class="eyebrow rv">07 — Our ministers</p>
+        <p class="eyebrow rv">08 — Our ministers</p>
         <h2 class="rv">Brie &amp; Bjorn</h2>
         <p class="lead rv" style="margin-top:28px">Founding trustees and loving, caring ordained ministers of our church.</p>
         <p class="muted rv">Embodying the divine flow as it moves through them as uncompromised life — effortlessly manifesting as joy, ease, abundance and peace.</p>
@@ -769,6 +809,7 @@ footer a:hover{color:var(--gold-light)}
       <p class="f-h">Explore</p>
       <ul class="f-list">
         <li><a href="#villaging">What is villaging</a></li>
+        <li><a href="#movement">The Movement</a></li>
         <li><a href="#why">Why now</a></li>
         <li><a href="#participate">How to participate</a></li>
         <li><a href="#belonging">On belonging</a></li>
