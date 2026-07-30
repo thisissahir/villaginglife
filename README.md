@@ -18,7 +18,7 @@ A single, self-contained static page (`index.html`). No build step, no dependenc
 - Respects `prefers-reduced-motion`
 - Accessible focus states and semantic landmarks
 - SEO + social metadata (Open Graph, Twitter Card) and JSON-LD structured data (`Organization`, `WebPage`, `FAQPage`)
-- Web fonts: [Cormorant Garamond](https://fonts.google.com/specimen/Cormorant+Garamond) + [Jost](https://fonts.google.com/specimen/Jost)
+- Web fonts: [Fraunces](https://fonts.google.com/specimen/Fraunces) (organic display + body) + [Hanken Grotesk](https://fonts.google.com/specimen/Hanken+Grotesk) (labels). The hero is set up to swap to the licensed **Rancheros** face via an `@font-face` slot once its web files are added to `/fonts/`.
 
 ## Running locally
 
