@@ -252,6 +252,14 @@ em,.ital{font-style:italic}
   margin:0 0 30px;max-width:23ch
 }
 .hero .sub{color:var(--on-dark);max-width:56ch;margin-bottom:16px}
+.hero .eyebrow{
+  font-size:clamp(19px,2.6vw,36px);line-height:1.45;letter-spacing:.3em;font-weight:500;margin-bottom:32px;max-width:22ch;
+  background:linear-gradient(100deg,#8E6E30 0%,#C9A660 28%,#F4E1B0 50%,#C9A660 72%,#8E6E30 100%);
+  background-size:230% 100%;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+  animation:eyebrowShimmer 6s ease-in-out infinite alternate
+}
+@keyframes eyebrowShimmer{from{background-position:175% 0}to{background-position:-75% 0}}
 .hero .place{
   font-family:var(--sans);font-size:clamp(12px,.95vw,14px);letter-spacing:.22em;text-transform:uppercase;
   color:var(--sage-light);margin:32px 0 40px;display:flex;align-items:center;gap:14px;flex-wrap:wrap
