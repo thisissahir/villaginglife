@@ -298,7 +298,7 @@ h1,h2,.statement .big{font-family:var(--hero-display)}
 
 /* ways grid */
 .ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:1px;background:var(--line);margin-top:64px;border:1px solid var(--line)}
-.ways .way{background:var(--paper);padding:clamp(30px,3.2vw,48px);display:flex;flex-direction:column;gap:16px;transition:background .4s ease}
+.ways .way{position:relative;background:var(--paper);padding:clamp(30px,3.2vw,48px);display:flex;flex-direction:column;gap:16px;transition:background .4s ease}
 .ways .way:hover{background:#fff}
 .cream .ways .way{background:var(--cream)}
 .cream .ways .way:hover{background:var(--paper)}
@@ -307,6 +307,13 @@ h1,h2,.statement .big{font-family:var(--hero-display)}
 .way p{font-size:clamp(19px,1.45vw,23px);color:var(--body);line-height:1.55}
 .way.mark{align-items:center;justify-content:center;padding:clamp(28px,3.4vw,48px)}
 .way.mark svg{width:clamp(104px,11vw,168px);height:auto;opacity:.92}
+/* activity symbols (draw on when the card scrolls in) */
+.way-sym{position:absolute;top:clamp(26px,3vw,42px);right:clamp(26px,3vw,42px);width:38px;height:38px;overflow:visible;pointer-events:none}
+.way-sym .s{fill:none;stroke:#7d9d92;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}
+.way-sym .f{fill:#7d9d92;stroke:none;opacity:0}
+.way.in .way-sym .s{animation:vl-draw .85s cubic-bezier(.4,0,.2,1) var(--d,0s) forwards}
+.way.in .way-sym .f{animation:sym-fade .6s ease .15s forwards}
+@keyframes sym-fade{to{opacity:1}}
 
 /* pull quote */
 .pull{
@@ -376,6 +383,8 @@ footer a:hover{color:var(--gold-light)}
   .rv{opacity:1;transform:none}
   html{scroll-behavior:auto}
   .vl-path{stroke-dashoffset:0!important}
+  .way-sym .s{stroke-dashoffset:0!important}
+  .way-sym .f{opacity:1!important}
 }
 
 /* ============ hero mark draw-on ============ */
@@ -494,11 +503,38 @@ footer a:hover{color:var(--gold-light)}
         <p class="muted rv">We have houses, schedules, careers, and endless ways to stay busy — yet many of us rarely experience the simple nourishment of belonging to something alive.</p>
         <p class="muted rv">We believe that humans naturally thrive when they participate in a living organism larger than themselves. Not through obligation or sacrifice — but because participation itself is nourishing.</p>
         <div class="ways" style="margin-top:56px">
-          <div class="way rv"><span class="k">Together</span><h3>Building a living pond</h3></div>
-          <div class="way rv"><span class="k">Together</span><h3>Caring for the land</h3></div>
-          <div class="way rv"><span class="k">Together</span><h3>Chanting together</h3></div>
-          <div class="way rv"><span class="k">Together</span><h3>Planting and gathering</h3></div>
-          <div class="way rv"><span class="k">Together</span><h3>Being honest when relationship becomes difficult</h3></div>
+          <div class="way rv"><span class="k">Together</span><h3>Building a living pond</h3>
+            <svg class="way-sym" viewBox="0 0 44 44" aria-hidden="true">
+              <path class="f" d="M22 5 q2.4 3.2 0 5.4 q-2.4 -2.2 0 -5.4 Z"/>
+              <ellipse class="s" pathLength="1" cx="22" cy="27" rx="5" ry="2.4" style="--d:.10s"/>
+              <ellipse class="s" pathLength="1" cx="22" cy="27" rx="10" ry="4.8" style="--d:.22s"/>
+              <ellipse class="s" pathLength="1" cx="22" cy="27" rx="15" ry="7.2" style="--d:.34s"/>
+            </svg></div>
+          <div class="way rv"><span class="k">Together</span><h3>Caring for the land</h3>
+            <svg class="way-sym" viewBox="0 0 44 44" aria-hidden="true">
+              <circle class="s" pathLength="1" cx="31" cy="11" r="5" style="--d:.30s"/>
+              <path class="s" pathLength="1" d="M4 30 Q14 20 22 28 Q30 36 40 26" style="--d:.10s"/>
+              <path class="s" pathLength="1" d="M4 36 Q16 30 24 34 Q32 38 40 34" style="--d:.20s"/>
+            </svg></div>
+          <div class="way rv"><span class="k">Together</span><h3>Chanting together</h3>
+            <svg class="way-sym" viewBox="0 0 44 44" aria-hidden="true">
+              <circle class="f" cx="22" cy="22" r="2"/>
+              <path class="s" pathLength="1" d="M27 15 A9 9 0 0 1 27 29" style="--d:.10s"/>
+              <path class="s" pathLength="1" d="M17 15 A9 9 0 0 0 17 29" style="--d:.10s"/>
+              <path class="s" pathLength="1" d="M32 10 A15 15 0 0 1 32 34" style="--d:.26s"/>
+              <path class="s" pathLength="1" d="M12 10 A15 15 0 0 0 12 34" style="--d:.26s"/>
+            </svg></div>
+          <div class="way rv"><span class="k">Together</span><h3>Planting and gathering</h3>
+            <svg class="way-sym" viewBox="0 0 44 44" aria-hidden="true">
+              <path class="s" pathLength="1" d="M22 39 L22 18" style="--d:.10s"/>
+              <path class="s" pathLength="1" d="M22 24 Q11 22 12 12 Q22 13 22 24 Z" style="--d:.24s"/>
+              <path class="s" pathLength="1" d="M22 20 Q33 18 32 9 Q22 10 22 20 Z" style="--d:.36s"/>
+            </svg></div>
+          <div class="way rv"><span class="k">Together</span><h3>Being honest when relationship becomes difficult</h3>
+            <svg class="way-sym" viewBox="0 0 44 44" aria-hidden="true">
+              <circle class="s" pathLength="1" cx="16" cy="22" r="11" style="--d:.10s"/>
+              <circle class="s" pathLength="1" cx="28" cy="22" r="11" style="--d:.24s"/>
+            </svg></div>
           <div class="way mark rv" aria-hidden="true">
             <svg viewBox="0 0 200 200" aria-hidden="true">
               <circle cx="100" cy="100" r="72" fill="none" stroke="#A9873F" stroke-width="1.5"/>
