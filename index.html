@@ -252,14 +252,24 @@ em,.ital{font-style:italic}
   margin:0 0 30px;max-width:23ch
 }
 .hero .sub{color:var(--on-dark);max-width:56ch;margin-bottom:16px}
-.hero .eyebrow{
-  font-size:clamp(19px,2.6vw,36px);line-height:1.45;letter-spacing:.3em;font-weight:500;margin-bottom:32px;max-width:22ch;
-  background:linear-gradient(100deg,#8E6E30 0%,#C9A660 28%,#F4E1B0 50%,#C9A660 72%,#8E6E30 100%);
+.hero .eyebrow{display:flex;align-items:flex-end;gap:clamp(18px,2.4vw,42px);max-width:none;margin:0 0 34px}
+.hero-kick-txt{
+  flex:0 0 auto;line-height:1.3;letter-spacing:.28em;font-weight:500;
+  font-size:clamp(18px,2.5vw,34px);
+  background:linear-gradient(100deg,#8E6E30 0%,#C9A660 30%,#F4E1B0 50%,#C9A660 70%,#8E6E30 100%);
   background-size:230% 100%;
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
   animation:eyebrowShimmer 6s ease-in-out infinite alternate
 }
+.hero-kick-line{
+  flex:1 1 auto;height:2px;min-width:48px;margin-bottom:.55em;
+  background:linear-gradient(90deg,rgba(201,166,96,.85),rgba(201,166,96,0));
+  transform:scaleX(1);transform-origin:left;
+  animation:kickLine 1.2s cubic-bezier(.22,1,.36,1) .45s both
+}
+@media(max-width:600px){.hero-kick-line{display:none}}
 @keyframes eyebrowShimmer{from{background-position:175% 0}to{background-position:-75% 0}}
+@keyframes kickLine{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .hero .place{
   font-family:var(--sans);font-size:clamp(12px,.95vw,14px);letter-spacing:.22em;text-transform:uppercase;
   color:var(--sage-light);margin:32px 0 40px;display:flex;align-items:center;gap:14px;flex-wrap:wrap
@@ -438,7 +448,10 @@ footer a:hover{color:var(--gold-light)}
 <section class="hero">
   <div class="hero-grid">
     <div>
-      <p class="eyebrow rv">Temple of the Golden Light · Asheville, North Carolina</p>
+      <p class="eyebrow rv">
+        <span class="hero-kick-txt">Temple of the Golden Light<br>Asheville, North Carolina</span>
+        <span class="hero-kick-line" aria-hidden="true"></span>
+      </p>
       <h1 class="rv">Villaging<br>Life</h1>
       <p class="quote rv">You belong here without having to stop being yourself.</p>
       <p class="sub rv">A living field for creating the conditions where life can touch us again. Not a belonging you earn by fitting in, but one you enter by showing up honestly, exactly as you are.</p>
