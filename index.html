@@ -494,6 +494,26 @@ footer a:hover{color:var(--gold-light)}
 .vl-path{stroke-dasharray:1;stroke-dashoffset:1}
 @keyframes vl-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
 @keyframes vl-breath{0%,100%{transform:scale(1)}50%{transform:scale(1.015)}}
+/* connect form + tour CTA */
+.tour-cta{margin-top:clamp(32px,4vw,48px)}
+.connect-form{max-width:720px;margin-top:clamp(36px,4vw,54px);display:flex;flex-direction:column;gap:clamp(22px,2.4vw,30px)}
+.connect-form .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2vw,26px)}
+@media(max-width:560px){.f-row{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:9px}
+.connect-form .field>label{font-family:var(--sans);font-size:14px;letter-spacing:.02em;color:var(--body)}
+.req{color:var(--gold)}
+.connect-form input[type=text],.connect-form input[type=email],.connect-form textarea{
+  font-family:var(--read);font-size:18px;color:var(--ink);background:var(--paper);
+  border:1px solid var(--line);border-radius:3px;padding:14px 16px;width:100%;transition:border-color .3s ease}
+.connect-form input[type=text]:focus,.connect-form input[type=email]:focus,.connect-form textarea:focus{outline:none;border-color:var(--gold)}
+.connect-form textarea{resize:vertical;min-height:150px;line-height:1.55}
+.checks{border:0;padding:0;margin:6px 0 0;display:flex;flex-direction:column;gap:14px}
+.checks legend{font-family:var(--read);font-style:italic;font-size:18px;color:var(--body-mute);margin-bottom:16px;padding:0}
+.checks label,.check-news{font-family:var(--read);font-size:17px;color:var(--body);display:flex;align-items:flex-start;gap:12px;cursor:pointer;line-height:1.4}
+.connect-form input[type=checkbox]{width:19px;height:19px;flex-shrink:0;accent-color:var(--gold);margin-top:2px;cursor:pointer}
+.connect-form button.btn{align-self:flex-start;margin-top:8px}
+.form-thanks{font-family:var(--read);font-size:19px;color:var(--sage-mid);margin:0}
 </style>
 </head>
 <body>
@@ -669,6 +689,7 @@ footer a:hover{color:var(--gold-light)}
       </div>
       <!-- add more <div class="vcard">…</div> blocks here as tours are added -->
     </div>
+    <div class="tour-cta rv"><a class="btn solid" href="#connect"><span>Set up a call</span></a></div>
   </div>
 </section>
 
@@ -942,6 +963,43 @@ footer a:hover{color:var(--gold-light)}
     </div>
   </div>
 </section>
+
+<!-- ============ CONNECT (intake form) ============ -->
+<section class="section cream" id="connect">
+  <div class="wrap">
+    <p class="eyebrow rv">Connect</p>
+    <h2 class="rv" style="max-width:16ch">We'd love to hear from you</h2>
+    <div class="narrow" style="margin-top:30px">
+      <p class="lead rv">Whether you're curious about Villaging Life, interested in joining a gathering, bringing your gifts, supporting the vision, or simply starting a conversation, this is a place to reach out.</p>
+      <p class="muted rv">You don't have to know exactly how you fit. Begin with what feels alive for you.</p>
+    </div>
+    <form class="connect-form rv" id="connect-form" aria-label="Connect with Villaging Life">
+      <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="f-row">
+        <div class="field"><label for="cf-first">First name <span class="req">*</span></label><input id="cf-first" name="first" type="text" autocomplete="given-name" required></div>
+        <div class="field"><label for="cf-last">Last name <span class="req">*</span></label><input id="cf-last" name="last" type="text" autocomplete="family-name" required></div>
+      </div>
+      <div class="field"><label for="cf-email">Email <span class="req">*</span></label><input id="cf-email" name="email" type="email" autocomplete="email" required></div>
+      <label class="check-news"><input type="checkbox" name="news"><span>Sign up for news and updates</span></label>
+      <div class="field"><label for="cf-msg">We'd love to hear about you, your gifts, what excites you, and how you imagine participating. <span class="req">*</span></label><textarea id="cf-msg" name="message" rows="6" required></textarea></div>
+      <fieldset class="checks">
+        <legend>…or check the boxes that speak to you</legend>
+        <label><input type="checkbox" name="interest" value="I'd love to come to a gathering"><span>I'd love to come to a gathering</span></label>
+        <label><input type="checkbox" name="interest" value="I'd like to join a workday"><span>I'd like to join a workday</span></label>
+        <label><input type="checkbox" name="interest" value="I'm interested in permaculture, farm, or care for animals"><span>I'm interested in permaculture, farm, or care for animals</span></label>
+        <label><input type="checkbox" name="interest" value="I'd love to contribute my skills or trade"><span>I'd love to contribute my skills or trade</span></label>
+        <label><input type="checkbox" name="interest" value="I'm a photographer, writer, or storyteller"><span>I'm a photographer, writer, or storyteller</span></label>
+        <label><input type="checkbox" name="interest" value="I'd like to help build or create"><span>I'd like to help build or create</span></label>
+        <label><input type="checkbox" name="interest" value="I enjoy technology, websites, or organizational support"><span>I enjoy technology, websites, or organizational support</span></label>
+        <label><input type="checkbox" name="interest" value="I'd love to make a financial contribution"><span>I'd love to make a financial contribution</span></label>
+        <label><input type="checkbox" name="interest" value="I'm interested in exploring life on the land"><span>I'm interested in exploring life on the land</span></label>
+        <label><input type="checkbox" name="interest" value="I'm simply feeling resonance and would love to start a conversation"><span>I'm simply feeling resonance and would love to start a conversation</span></label>
+      </fieldset>
+      <button type="submit" class="btn solid"><span>Submit</span></button>
+      <p class="form-thanks" id="form-thanks" role="status" hidden>Thank you. Your message is opening in your email — send it and we'll be in touch.</p>
+    </form>
+  </div>
+</section>
 </main>
 
 <!-- ============ FOOTER ============ -->
@@ -1103,6 +1161,29 @@ footer a:hover{color:var(--gold-light)}
     }, { threshold:0.15 });
     io.observe(tl);
   } else { tl.classList.add('in'); }
+})();
+</script>
+
+<script>
+(function(){
+  var form = document.getElementById('connect-form');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(form.querySelector('.hp').value){ return; } /* honeypot: silently drop bots */
+    var g = function(n){ var el = form.querySelector('[name="'+n+'"]'); return el ? el.value.trim() : ''; };
+    var interests = [];
+    form.querySelectorAll('input[name="interest"]:checked').forEach(function(c){ interests.push(c.value); });
+    var news = form.querySelector('[name="news"]').checked ? 'Yes' : 'No';
+    var body = 'Name: ' + g('first') + ' ' + g('last') +
+      '\nEmail: ' + g('email') +
+      '\nNews & updates: ' + news +
+      '\n\nAbout them:\n' + g('message') +
+      (interests.length ? ('\n\nInterested in:\n- ' + interests.join('\n- ')) : '');
+    var subject = 'Villaging Life — Connect: ' + g('first') + ' ' + g('last');
+    window.location.href = 'mailto:brieandbjorn@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    var t = document.getElementById('form-thanks'); if(t){ t.hidden = false; }
+  });
 })();
 </script>
 </body>
