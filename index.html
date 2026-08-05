@@ -553,7 +553,7 @@ footer a:hover{color:var(--gold-light)}
         <circle cx="17.2" cy="6.8" r="1.15" fill="currentColor" stroke="none"/>
       </svg>
     </a>
-    <a class="btn on-dark nav-cta" href="#enter"><span>Enter the field</span></a>
+    <a class="btn on-dark nav-cta" href="#connect"><span>Enter the field</span></a>
   </div>
 </header>
 
@@ -974,7 +974,8 @@ footer a:hover{color:var(--gold-light)}
       <p class="muted rv">You don't have to know exactly how you fit. Begin with what feels alive for you.</p>
     </div>
     <form class="connect-form rv" id="connect-form" aria-label="Connect with Villaging Life">
-      <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="_subject" value="Villaging Life — new connect submission">
       <div class="f-row">
         <div class="field"><label for="cf-first">First name <span class="req">*</span></label><input id="cf-first" name="first" type="text" autocomplete="given-name" required></div>
         <div class="field"><label for="cf-last">Last name <span class="req">*</span></label><input id="cf-last" name="last" type="text" autocomplete="family-name" required></div>
@@ -1166,12 +1167,35 @@ footer a:hover{color:var(--gold-light)}
 
 <script>
 (function(){
+  /* Paste your Formspree endpoint here to enable real submissions,
+     e.g. 'https://formspree.io/f/abcdwxyz'. Leave '' to use the mailto fallback. */
+  var FORMSPREE = '';
+
   var form = document.getElementById('connect-form');
   if(!form) return;
+  var thanks = document.getElementById('form-thanks');
+  var btn = form.querySelector('button[type="submit"]');
+
+  function g(n){ var el = form.querySelector('[name="'+n+'"]'); return el ? el.value.trim() : ''; }
+  function showThanks(msg){ if(thanks){ if(msg) thanks.textContent = msg; thanks.hidden = false; } }
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
     if(form.querySelector('.hp').value){ return; } /* honeypot: silently drop bots */
-    var g = function(n){ var el = form.querySelector('[name="'+n+'"]'); return el ? el.value.trim() : ''; };
+
+    if(FORMSPREE){
+      var data = new FormData(form);
+      if(btn){ btn.disabled = true; }
+      fetch(FORMSPREE, { method:'POST', body:data, headers:{ 'Accept':'application/json' } })
+        .then(function(r){
+          if(r.ok){ form.reset(); showThanks('Thank you. Your message is on its way — we’ll be in touch.'); }
+          else { showThanks('Something went wrong sending that. Please email brieandbjorn@gmail.com directly.'); if(btn){ btn.disabled = false; } }
+        })
+        .catch(function(){ showThanks('Something went wrong sending that. Please email brieandbjorn@gmail.com directly.'); if(btn){ btn.disabled = false; } });
+      return;
+    }
+
+    /* mailto fallback (used until a Formspree endpoint is set above) */
     var interests = [];
     form.querySelectorAll('input[name="interest"]:checked').forEach(function(c){ interests.push(c.value); });
     var news = form.querySelector('[name="news"]').checked ? 'Yes' : 'No';
@@ -1182,7 +1206,7 @@ footer a:hover{color:var(--gold-light)}
       (interests.length ? ('\n\nInterested in:\n- ' + interests.join('\n- ')) : '');
     var subject = 'Villaging Life — Connect: ' + g('first') + ' ' + g('last');
     window.location.href = 'mailto:brieandbjorn@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    var t = document.getElementById('form-thanks'); if(t){ t.hidden = false; }
+    showThanks();
   });
 })();
 </script>
