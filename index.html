@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Living Earth Village — A living field where life can touch us again</title>
-<meta name="description" content="Living Earth Village is an invitation into participation — land, relationship, nourishment, honesty, beauty, work, rest, ceremony, conflict, repair, and the ordinary sacredness of living together. Beginning with 25 acres of living land.">
+<title>Living Earth Village - A living field where life can touch us again</title>
+<meta name="description" content="Living Earth Village is an invitation into participation - land, relationship, nourishment, honesty, beauty, work, rest, ceremony, conflict, repair, and the ordinary sacredness of living together. Beginning with 25 acres of living land.">
 <link rel="canonical" href="https://livingearthvillage.com">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Living Earth Village — A living field where you belong as you are">
+<meta property="og:title" content="Living Earth Village - A living field where you belong as you are">
 <meta property="og:description" content="You belong here without having to stop being yourself. A living field where you are received as you are.">
 <meta property="og:url" content="https://livingearthvillage.com">
 <meta property="og:site_name" content="Living Earth Village">
@@ -47,7 +47,7 @@
           "name": "What is villaging?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Villaging is a way of living — a way of relating to one another, to the land, and to life itself. We use the word villaging because it is still alive. It is a verb. It is something we practice together rather than something we achieve."
+            "text": "Villaging is a way of living - a way of relating to one another, to the land, and to life itself. We use the word villaging because it is still alive. It is a verb. It is something we practice together rather than something we achieve."
           }
         },
         {
@@ -55,7 +55,7 @@
           "name": "How can I participate in Living Earth Village?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "You might come for a gathering, join a workday, help build the community kitchen, plant a garden, cook a meal, care for animals, offer your craft, or simply spend time in the field. Some may eventually become long-term residents or stewards. Others may visit occasionally, contribute resources, or support the vision from afar. What matters is not the role — what matters is participation."
+            "text": "You might come for a gathering, join a workday, help build the community kitchen, plant a garden, cook a meal, care for animals, offer your craft, or simply spend time in the field. Some may eventually become long-term residents or stewards. Others may visit occasionally, contribute resources, or support the vision from afar. What matters is not the role - what matters is participation."
           }
         },
         {
@@ -63,7 +63,7 @@
           "name": "Who belongs at Living Earth Village?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Belonging here is not based on sharing the same beliefs, diet, politics, or lifestyle. It is based on a shared willingness to stay present with one another honestly, without editing yourself to be accepted. You belong not because you are one of us, but because you do not have to stop being yourself to be here. Naturally, not everyone will resonate with the field, and that is not exclusion. Every living organism has its own frequency."
+            "text": "Belonging here is not based on sharing the same beliefs, diet, politics, or lifestyle. It is based on a shared willingness to stay present with one another honestly, without editing yourself to be accepted. We all belong here exactly as we are. Naturally, not everyone will resonate with the field, and that is not exclusion. Every living organism has its own frequency."
           }
         },
         {
@@ -71,7 +71,7 @@
           "name": "Who leads Living Earth Village?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Brie and Bjorn — the founders of Living Earth Village."
+            "text": "Brie and Bjorn - the founders of Living Earth Village."
           }
         }
       ]
@@ -105,7 +105,7 @@
   --pad:clamp(22px,5vw,120px);
   --sec:clamp(84px,11vw,190px);
 }
-/* HERO FONT — Rancheros (paid, Heatwave Type). SWAP IS ARMED: the hero uses
+/* HERO FONT - Rancheros (paid, Heatwave Type). SWAP IS ARMED: the hero uses
    Rancheros the instant the licensed file exists at /fonts/rancheros.woff2.
    Until that file is added, it falls back to Fraunces (one harmless 404). */
 @font-face{
@@ -169,7 +169,8 @@ em,.ital{font-style:italic}
 .brand svg{width:46px;height:46px;flex-shrink:0;transition:width .45s ease,height .45s ease}
 .nav.scrolled .brand svg{width:38px;height:38px}
 .brand-txt{display:flex;flex-direction:column;line-height:1}
-.brand-1{font-family:var(--serif);font-size:20px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper)}
+.brand-1{font-family:var(--serif);font-size:clamp(13px,2.4vw,20px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper);white-space:nowrap}
+@media(max-width:380px){.brand-1{white-space:normal;max-width:5ch;text-align:center;line-height:1.06;letter-spacing:.1em}}
 .brand-2{font-family:var(--sans);font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-light);margin-top:6px}
 .navlinks{display:flex;align-items:center;gap:clamp(16px,2.2vw,34px)}
 .navlinks a{
@@ -223,9 +224,9 @@ em,.ital{font-style:italic}
   background:radial-gradient(circle,rgba(201,166,96,.16) 0%,rgba(201,166,96,.05) 34%,transparent 66%);
   pointer-events:none;animation:breathe 42s ease-in-out infinite
 }
-.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.6}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.9;filter:brightness(1.08)}
 .hero-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(163deg,rgba(42,53,36,.58) 0%,rgba(34,45,29,.72) 55%,rgba(26,35,21,.82) 100%)}
+  background:linear-gradient(163deg,rgba(42,53,36,.29) 0%,rgba(34,45,29,.36) 55%,rgba(26,35,21,.42) 100%)}
 @media(prefers-reduced-motion:reduce){.hero-video{display:none}}
 @keyframes breathe{0%,100%{opacity:.78;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.03)}}
 .hero-grid{
@@ -244,7 +245,8 @@ em,.ital{font-style:italic}
   margin:0 0 30px;max-width:23ch
 }
 .hero .sub{color:var(--on-dark);max-width:56ch;margin-bottom:16px}
-.hero .eyebrow{display:flex;align-items:flex-end;gap:clamp(18px,2.4vw,42px);max-width:none;margin:0 0 34px}
+.hero .eyebrow{color:var(--gold-light);margin:0 0 26px}
+.hero-micro{font-family:var(--read);font-style:italic;font-size:16px;color:var(--on-dark);margin:18px 0 0}
 .hero-kick-txt{
   flex:0 0 auto;line-height:1.3;letter-spacing:.28em;font-weight:500;
   font-size:clamp(18px,2.5vw,34px);
@@ -315,9 +317,35 @@ h1,h2,.statement .big{font-family:var(--hero-display)}
 .way .k{font-family:var(--sans);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--sage)}
 .way h3{font-size:clamp(24px,2vw,32px)}
 .way p{font-size:clamp(19px,1.45vw,23px);color:var(--body);line-height:1.55}
-#participate .ways{grid-template-columns:repeat(4,1fr)}
-@media(max-width:1000px){#participate .ways{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){#participate .ways{grid-template-columns:1fr}}
+#join .ways{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1000px){#join .ways{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){#join .ways{grid-template-columns:1fr}}
+/* villaging image + caption grid (alternating) */
+.vgrid{margin-top:clamp(48px,6vw,80px);display:flex;flex-direction:column;gap:clamp(40px,5vw,72px)}
+.vg{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,4vw,60px);align-items:center;margin:0}
+.vg img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:4px;box-shadow:0 22px 50px -32px rgba(42,53,36,.45)}
+.vg figcaption{font-family:var(--serif);font-size:clamp(24px,2.4vw,34px);line-height:1.24;color:var(--ink)}
+.vg-n{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--gold);margin-bottom:14px}
+.vg:nth-child(even) img{order:2}
+@media(max-width:760px){.vg{grid-template-columns:1fr;gap:20px}.vg:nth-child(even) img{order:0}}
+/* persistent primary CTA - floating pill (desktop) / sticky bar (mobile) */
+.pcta{position:fixed;z-index:70;opacity:0;visibility:hidden;transition:opacity .4s ease,transform .4s ease;transform:translateY(10px)}
+.pcta.show{opacity:1;visibility:visible;transform:none}
+.pcta a{display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;background:var(--gold);color:var(--paper);
+  box-shadow:0 14px 34px -12px rgba(42,53,36,.7)}
+.pcta a:hover{background:var(--gold-light);color:var(--ink)}
+@media(min-width:781px){
+  .pcta{right:clamp(20px,3vw,40px);top:50%;transform:translateY(calc(-50% + 10px))}
+  .pcta.show{transform:translateY(-50%)}
+  .pcta a{font-size:12px;padding:16px 26px;border-radius:100px}
+}
+@media(max-width:780px){
+  .pcta{left:0;right:0;bottom:0;transform:translateY(100%)}
+  .pcta.show{transform:none}
+  .pcta a{font-size:13px;padding:17px 18px;border-radius:0;box-shadow:0 -8px 24px -10px rgba(42,53,36,.6)}
+}
+@media(prefers-reduced-motion:reduce){.pcta{transition:opacity .2s ease}}
 .way.mark{align-items:center;justify-content:center;padding:clamp(28px,3.4vw,48px)}
 .way.mark svg{width:clamp(104px,11vw,168px);height:auto;opacity:.92}
 /* activity symbols (draw on when the card scrolls in) */
@@ -328,7 +356,7 @@ h1,h2,.statement .big{font-family:var(--hero-display)}
 .way.in .way-sym .f{animation:sym-fade .6s ease .15s forwards}
 @keyframes sym-fade{to{opacity:1}}
 
-/* movement reel — auto-scrolling photo gallery */
+/* movement reel - auto-scrolling photo gallery */
 .reel{margin-top:clamp(48px,6vw,84px);overflow:hidden;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
   mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
@@ -340,7 +368,7 @@ h1,h2,.statement .big{font-family:var(--hero-display)}
 @keyframes reel{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.reel{overflow-x:auto}.reel-track{animation:none}}
 
-/* video reel — take a tour (manual scroll; add more .vcard blocks later) */
+/* video reel - take a tour (manual scroll; add more .vcard blocks later) */
 .vreel{display:flex;gap:clamp(16px,2vw,28px);margin-top:clamp(40px,5vw,64px);
   overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:8px}
 .vcard{position:relative;flex:0 0 auto;scroll-snap-align:start;
@@ -358,7 +386,7 @@ h1,h2,.statement .big{font-family:var(--hero-display)}
 .vplay-label{font-family:var(--sans);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--paper)}
 .vcard.playing .vplay{opacity:0;pointer-events:none}
 
-/* road ahead — interactive milestone timeline (edit the ROADMAP array in the script) */
+/* road ahead - interactive milestone timeline (edit the ROADMAP array in the script) */
 .hl{color:var(--sage-mid)}
 .road-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,88px);align-items:start;margin-top:clamp(38px,5vw,64px)}
 @media(max-width:900px){.road-grid{grid-template-columns:1fr;gap:44px}}
@@ -520,7 +548,7 @@ footer a:hover{color:var(--gold-light)}
 
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
-  <a class="brand" href="#top" aria-label="Living Earth Village — home">
+  <a class="brand" href="#top" aria-label="Living Earth Village - home">
     <svg viewBox="0 0 200 200" role="img" aria-hidden="true">
       <circle cx="100" cy="100" r="72" fill="none" stroke="#C9A660" stroke-width="2.6"/>
       <g fill="none" stroke="#A9BCA0" stroke-width="2.8" stroke-linecap="round">
@@ -541,7 +569,7 @@ footer a:hover{color:var(--gold-light)}
     <a href="#villaging">What is villaging</a>
     <a href="#movement">The Movement</a>
     <a href="#why">Why now</a>
-    <a href="#participate">Participate</a>
+    <a href="#join">Participate</a>
     <a href="#belonging">Belonging</a>
     <a href="#ministers">The founders</a>
   </nav>
@@ -553,7 +581,7 @@ footer a:hover{color:var(--gold-light)}
         <circle cx="17.2" cy="6.8" r="1.15" fill="currentColor" stroke="none"/>
       </svg>
     </a>
-    <a class="btn on-dark nav-cta" href="#connect"><span>Enter the field</span></a>
+    <a class="btn on-dark nav-cta" href="#participate"><span>See Where You Fit In</span></a>
   </div>
 </header>
 
@@ -566,15 +594,14 @@ footer a:hover{color:var(--gold-light)}
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="hero-grid">
     <div>
-      <h1 class="rv">Living Earth<br>Village</h1>
-      <p class="quote rv">You belong here without having to stop being yourself.</p>
-      <p class="sub rv">A living field for creating the conditions where life can touch us again. Not a belonging you earn by fitting in, but one you enter by showing up honestly, exactly as you are.</p>
-      <p class="place rv">We are beginning with 25 acres of living land</p>
-      <p class="sub rv" style="margin-bottom:42px">We are listening for the people who feel this as something already alive in them.</p>
-      <a class="btn on-dark rv" href="#tour"><span>Take a tour</span></a>
+      <p class="eyebrow rv">We are being led.</p>
+      <h1 class="rv">It's Happening Now</h1>
+      <p class="sub rv" style="margin-bottom:34px">Living Earth Village is alive. The land is ours. The work has started. People are already here.</p>
+      <a class="btn on-dark rv" href="#participate"><span>See Where You Fit In</span></a>
+      <p class="hero-micro rv">Come exactly as you are.</p>
     </div>
     <div class="hero-mark rv">
-      <svg viewBox="0 0 200 200" role="img" aria-label="Living Earth Village mark — a sprout growing under a dome, held in a circle that reads as a face" style="overflow:visible;transform-origin:center;animation:vl-breath 3.4s ease-in-out 2.4s 1 both">
+      <svg viewBox="0 0 200 200" role="img" aria-label="Living Earth Village mark - a sprout growing under a dome, held in a circle that reads as a face" style="overflow:visible;transform-origin:center;animation:vl-breath 3.4s ease-in-out 2.4s 1 both">
         <circle class="vl-path" pathLength="1" cx="100" cy="100" r="72" fill="none" stroke="#C9A660" stroke-width="1.4" style="animation:vl-draw .9s cubic-bezier(.5,0,.2,1) .15s both"/>
         <g fill="none" stroke="#A9BCA0" stroke-width="1.5" stroke-linecap="round">
           <path class="vl-path" pathLength="1" d="M 60 78 A 42 42 0 0 1 140 78" style="animation:vl-draw .8s cubic-bezier(.4,0,.2,1) .55s both"/>
@@ -594,35 +621,29 @@ footer a:hover{color:var(--gold-light)}
 
 <!-- ============ STATEMENT ============ -->
 <section class="statement">
-  <p class="big rv">Belonging without <em>fitting in</em>.</p>
-  <p class="rv">Most belonging comes with an agreement: be enough like us. This is a different kind. Here you are received as you are, and revealed, not asked to edit yourself to be accepted.</p>
+  <p class="big rv">We secured 25 acres. The land is ours.</p>
+  <p class="rv">We are already clearing, planting, building, and listening to what this place is asking for. People are already showing up to do it with us.</p>
+  <p class="rv" style="margin-top:.9em">This is not a plan for someday. It is underway.</p>
 </section>
 
 <!-- ============ WHAT IS VILLAGING ============ -->
-<!-- PROCESS TERM [DECISION PENDING — Bjorn]: "villaging" is kept as the practice verb in this one section only.
+<!-- PROCESS TERM [DECISION PENDING - Bjorn]: "villaging" is kept as the practice verb in this one section only.
      Do not scatter it elsewhere. If Bjorn drops it, this is the single place to change. -->
 
 <section class="section" id="villaging">
   <div class="wrap">
-    <div class="two">
-      <div class="side">
-        <p class="eyebrow rv">01 — The word</p>
-        <h2 class="rv">What is<br>villaging?</h2>
-        <hr class="rule rv" style="margin-top:34px">
-      </div>
-      <div>
-        <p class="lead rv">It is a way of living. A way of relating to one another, to the land, and to life itself.</p>
-        <p class="muted rv">We use the word <em>villaging</em> because it is still alive. It is a verb. It is something we practice together rather than something we achieve.</p>
-        <ul class="acts">
-          <li class="rv"><span class="n">01</span> a shared meal</li>
-          <li class="rv"><span class="n">02</span> a conversation</li>
-          <li class="rv"><span class="n">03</span> a building project</li>
-          <li class="rv"><span class="n">04</span> a conflict met honestly</li>
-          <li class="rv"><span class="n">05</span> a song around the fire</li>
-          <li class="rv"><span class="n">06</span> a morning tending the garden</li>
-        </ul>
-        <p class="lead rv" style="margin-top:52px">Every act of participation strengthens the living field that, in turn, nourishes everyone within it.</p>
-      </div>
+    <p class="eyebrow rv">01 - The word</p>
+    <h2 class="rv" style="max-width:12ch">What is villaging?</h2>
+    <div class="narrow" style="margin-top:30px">
+      <p class="lead rv">Villaging is not a program. It is what happens when people stop living separately.</p>
+    </div>
+    <div class="vgrid">
+      <figure class="vg rv"><img src="images/villaging-01.jpg" alt="Cooking dinner for everyone, then eating together at one long table" loading="lazy" decoding="async"><figcaption><span class="vg-n">01</span> Cooking dinner for everyone, then eating it together at one long table.</figcaption></figure>
+      <figure class="vg rv"><img src="images/villaging-02.jpg" alt="Raising a structure that was not there this morning" loading="lazy" decoding="async"><figcaption><span class="vg-n">02</span> Raising a structure that was not there this morning.</figcaption></figure>
+      <figure class="vg rv"><img src="images/villaging-03.jpg" alt="Singing around the fire" loading="lazy" decoding="async"><figcaption><span class="vg-n">03</span> Singing around the fire until nobody is keeping track of time.</figcaption></figure>
+      <figure class="vg rv"><img src="images/villaging-04.jpg" alt="Hands in the soil, planting" loading="lazy" decoding="async"><figcaption><span class="vg-n">04</span> Hands in the soil, planting what we will be eating in four months.</figcaption></figure>
+      <figure class="vg rv"><img src="images/villaging-05.jpg" alt="Sitting with someone through the hard thing" loading="lazy" decoding="async"><figcaption><span class="vg-n">05</span> Sitting with someone through the hard thing instead of walking away.</figcaption></figure>
+      <figure class="vg rv"><img src="images/villaging-06.jpg" alt="Chainsaw in the morning, stillness at sunset" loading="lazy" decoding="async"><figcaption><span class="vg-n">06</span> Chainsaw in the morning. Stillness at sunset. Both in the same day.</figcaption></figure>
     </div>
   </div>
 </section>
@@ -630,7 +651,7 @@ footer a:hover{color:var(--gold-light)}
 <!-- ============ THE MOVEMENT ============ -->
 <section class="section dark" id="movement">
   <div class="wrap">
-    <p class="eyebrow rv">02 — The Movement</p>
+    <p class="eyebrow rv">02 - The Movement</p>
     <h2 class="rv" style="max-width:14ch">It is happening now</h2>
     <div class="narrow" style="margin-top:34px">
       <p class="lead rv">This is not an idea waiting to begin. It is already alive. People on the land, together, now.</p>
@@ -644,12 +665,24 @@ footer a:hover{color:var(--gold-light)}
       <img src="images/gallery/g4.jpg" alt="Together on the land" loading="lazy" decoding="async">
       <img src="images/gallery/g5.jpg" alt="The land and those who tend it" loading="lazy" decoding="async">
       <img src="images/gallery/g6.jpg" alt="A day in the field" loading="lazy" decoding="async">
+      <img src="images/gallery/g7.jpg" alt="On the land" loading="lazy" decoding="async">
+      <img src="images/gallery/g8.jpg" alt="On the land" loading="lazy" decoding="async">
+      <img src="images/gallery/g9.jpg" alt="On the land" loading="lazy" decoding="async">
+      <img src="images/gallery/g10.jpg" alt="On the land" loading="lazy" decoding="async">
+      <img src="images/gallery/g11.jpg" alt="On the land" loading="lazy" decoding="async">
+      <img src="images/gallery/g12.jpg" alt="On the land" loading="lazy" decoding="async">
       <img src="images/gallery/g1.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
       <img src="images/gallery/g2.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
       <img src="images/gallery/g3.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
       <img src="images/gallery/g4.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
       <img src="images/gallery/g5.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
       <img src="images/gallery/g6.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img src="images/gallery/g7.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img src="images/gallery/g8.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img src="images/gallery/g9.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img src="images/gallery/g10.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img src="images/gallery/g11.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img src="images/gallery/g12.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -657,8 +690,8 @@ footer a:hover{color:var(--gold-light)}
 <!-- ============ TAKE A TOUR ============ -->
 <section class="section" id="tour">
   <div class="wrap">
-    <p class="eyebrow rv">Take a tour</p>
-    <h2 class="rv" style="max-width:16ch">See what is happening now</h2>
+    <p class="eyebrow rv">The tour</p>
+    <h2 class="rv" style="max-width:16ch">See what's happening right now</h2>
     <div class="vreel rv">
       <div class="vcard">
         <video preload="none" playsinline controls poster="videos/main-tour-poster.jpg">
@@ -666,7 +699,7 @@ footer a:hover{color:var(--gold-light)}
         </video>
         <button class="vplay" type="button" aria-label="Play the tour">
           <span class="disc" aria-hidden="true"></span>
-          <span class="vplay-label">Take a tour</span>
+          <span class="vplay-label">Watch</span>
         </button>
       </div>
       <div class="vcard">
@@ -689,7 +722,7 @@ footer a:hover{color:var(--gold-light)}
       </div>
       <!-- add more <div class="vcard">…</div> blocks here as tours are added -->
     </div>
-    <div class="tour-cta rv"><a class="btn solid" href="#connect"><span>Set up a call</span></a></div>
+    <div class="tour-cta rv"><a class="btn solid" href="#participate"><span>See Where You Fit In</span></a></div>
   </div>
 </section>
 
@@ -719,14 +752,14 @@ footer a:hover{color:var(--gold-light)}
   <div class="wrap">
     <div class="two">
       <div class="side">
-        <p class="eyebrow rv">03 — The moment</p>
+        <p class="eyebrow rv">03 - The moment</p>
         <h2 class="rv">Why now?</h2>
         <hr class="rule rv" style="margin-top:34px">
       </div>
       <div>
         <p class="lead rv">Many of us are focused on surviving while feeling disconnected.</p>
-        <p class="muted rv">We have houses, schedules, careers, and endless ways to stay busy — yet many of us rarely experience the simple nourishment of belonging to something alive.</p>
-        <p class="muted rv">We believe that humans naturally thrive when they participate in a living organism larger than themselves. Not through obligation or sacrifice — but because participation itself is nourishing.</p>
+        <p class="muted rv">We have houses, schedules, careers, and endless ways to stay busy - yet many of us rarely experience the simple nourishment of belonging to something alive.</p>
+        <p class="muted rv">We believe that humans naturally thrive when they participate in a living organism larger than themselves. Not through obligation or sacrifice - but because participation itself is nourishing.</p>
         <div class="ways" style="margin-top:56px">
           <div class="way rv"><span class="k">Together</span><h3>Building a living pond</h3>
             <svg class="way-sym" viewBox="0 0 44 44" aria-hidden="true">
@@ -781,10 +814,10 @@ footer a:hover{color:var(--gold-light)}
   </div>
 </section>
 
-<!-- ============ PARTICIPATE ============ -->
-<section class="section" id="participate">
+<!-- ============ WAYS TO JOIN ============ -->
+<section class="section" id="join">
   <div class="wrap">
-    <p class="eyebrow rv">04 — Participation</p>
+    <p class="eyebrow rv">04 - Participation</p>
     <h2 class="rv" style="max-width:16ch">How you can participate</h2>
     <div class="narrow" style="margin-top:38px">
       <p class="lead rv">Living Earth Village is unfolding one step at a time. There are limitless ways to participate, and different people feel called in different ways. What matters is not the role. It is the willingness to take part.</p>
@@ -841,7 +874,7 @@ footer a:hover{color:var(--gold-light)}
 <!-- ============ PULL QUOTE ============ -->
 <section class="pull">
   <blockquote class="rv">
-    You belong here not because you are one of us.<br><em>But because you do not have to stop being you to be here.</em>
+    <em>We all belong here exactly as we are.</em>
   </blockquote>
 </section>
 
@@ -850,7 +883,7 @@ footer a:hover{color:var(--gold-light)}
   <div class="wrap">
     <div class="two">
       <div class="side">
-        <p class="eyebrow rv">05 — The organism</p>
+        <p class="eyebrow rv">05 - The organism</p>
         <h2 class="rv">A living<br>organism</h2>
         <hr class="rule rv" style="margin-top:34px">
       </div>
@@ -869,12 +902,12 @@ footer a:hover{color:var(--gold-light)}
   <div class="wrap">
     <div class="two">
       <div class="side">
-        <p class="eyebrow rv">06 — Belonging</p>
+        <p class="eyebrow rv">06 - Belonging</p>
         <h2 class="rv">Fitting in,<br>or being<br>received</h2>
         <hr class="rule rv" style="margin-top:34px">
       </div>
       <div>
-        <p class="lead rv">Most forms of belonging are quiet invitations to fit in. They gather around a center: an ideology, a faith, a politics, a diet, a way of life. The belonging is real, but it carries a condition. Be enough like us. The more you match, the more securely you belong.</p>
+        <p class="lead rv">Most forms of belonging are invitations to fit in. They gather around a center: an ideology, a faith, a politics, a diet, a way of life. The belonging is real, but it carries a condition. Be enough like us. The more you match, the more securely you belong.</p>
         <p class="muted rv">Living Earth Village has a different center. Not a shared belief, but a shared capacity to stay present with one another as ourselves.</p>
         <p class="muted rv">This does not remove discernment. It deepens it. The question is no longer whether you believe what we believe. It becomes whether we can live together in a way that lets each of us remain fully ourselves. One asks for conformity. The other asks for relationship.</p>
         <p class="muted rv">It is less like a club with membership and more like an ecosystem. An oak does not reject a pine for being wrong. And an oak does not grow in the middle of the ocean. There is discernment without condemnation. Compatibility without superiority.</p>
@@ -885,10 +918,29 @@ footer a:hover{color:var(--gold-light)}
   </div>
 </section>
 
+<!-- ============ NOT AN ESCAPE ============ -->
+<section class="section" id="not-an-escape">
+  <div class="wrap">
+    <div class="two">
+      <div class="side">
+        <p class="eyebrow rv">The stance</p>
+        <h2 class="rv">Not an<br>Escape</h2>
+        <hr class="rule rv" style="margin-top:34px">
+      </div>
+      <div>
+        <p class="lead rv">Most places like this are built to get away from the world. This one is built to turn around and face it.</p>
+        <p class="muted rv">We are not hiding out until it passes. We are making the conditions that make it easier to stay: love, open hearts, curiosity, play, honesty. The capacity to stay present when everything in you wants to run.</p>
+        <p class="muted rv">That applies out there. It also applies to the small wars inside you.</p>
+        <p class="lead rv" style="margin-top:40px">The caterpillar does not wait out the chrysalis. It stays through the dissolving. That is how the wings happen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ WHAT IT LOOKS LIKE ============ -->
 <section class="section dark">
   <div class="wrap">
-    <p class="eyebrow rv">07 — Any given day</p>
+    <p class="eyebrow rv">07 - Any given day</p>
     <h2 class="rv" style="max-width:18ch">What does villaging look like?</h2>
     <div class="narrow" style="margin-top:36px">
       <p class="lead rv" style="font-style:italic;color:var(--gold-pale)">It looks different every day.</p>
@@ -903,7 +955,7 @@ footer a:hover{color:var(--gold-light)}
       <span class="rv">Building the temple</span>
     </div>
     <div class="narrow" style="margin-top:64px">
-      <p class="lead rv">Having the uncomfortable conversation you wanted to avoid — and discovering it brings you closer instead of farther apart.</p>
+      <p class="lead rv">Having the uncomfortable conversation you wanted to avoid - and discovering it brings you closer instead of farther apart.</p>
       <p class="muted rv" style="margin-top:26px">Villaging is the ongoing practice of participating in what life is asking of us now.</p>
     </div>
   </div>
@@ -914,12 +966,12 @@ footer a:hover{color:var(--gold-light)}
   <div>
     <p class="eyebrow rv">Ecstasy</p>
     <h3 class="rv">Life can be ecstatic</h3>
-    <p class="rv">We believe that if we allow spirit in — if we offer ourselves up as vessels to let the divine express itself through our specific bodies with all its love and care — life can be ecstatic. A colorful, gorgeous celebration. The most beautiful and touching story ever written.</p>
+    <p class="rv">We believe that if we allow spirit in - if we offer ourselves up as vessels to let the divine express itself through our specific bodies with all its love and care - life can be ecstatic. A colorful, gorgeous celebration. The most beautiful and touching story ever written.</p>
   </div>
   <div>
     <p class="eyebrow rv">Sacred circle</p>
     <h3 class="rv">Spirit moves through us</h3>
-    <p class="rv">We believe that gathering in sacred circle — being present, holding hands — invites spirit to move through us lovingly and joyfully.</p>
+    <p class="rv">We believe that gathering in sacred circle - being present, holding hands - invites spirit to move through us lovingly and joyfully.</p>
   </div>
 </section>
 
@@ -943,23 +995,43 @@ footer a:hover{color:var(--gold-light)}
       </div>
       <div>
         <!-- SECTION NAME [NEEDS WORD]: "The founders" is a placeholder pending Bjorn's word choice -->
-        <p class="eyebrow rv">08 — The founders</p>
+        <p class="eyebrow rv">08 - The founders</p>
         <h2 class="rv">Brie &amp; Bjorn</h2>
         <p class="lead rv" style="margin-top:28px">The founders of Living Earth Village.</p>
-        <p class="muted rv">Embodying the divine flow as it moves through them as uncompromised life — effortlessly manifesting as joy, ease, abundance and peace.</p>
+        <p class="muted rv">Embodying the divine flow as it moves through them as uncompromised life - effortlessly manifesting as joy, ease, abundance and peace.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CTA ============ -->
-<section class="section dark cta" id="enter">
+<!-- ============ PARTICIPATION, NOT EXCHANGE ============ -->
+<section class="section" id="participation">
   <div class="wrap">
-    <p class="eyebrow rv">Enter the field</p>
-    <h2 class="rv">Some will feel this completely</h2>
-    <p class="rv">Every living field has its own frequency. Some people feel nourished by it. Others are drawn elsewhere, and that is not exclusion, only difference. If something in you recognized this before you finished reading, write to us. Tell us who you are and what you feel called toward. You do not have to arrive as anyone but yourself. There is no application. Only participation.</p>
+    <div class="two">
+      <div class="side">
+        <p class="eyebrow rv">The invitation</p>
+        <h2 class="rv">Participation,<br>not exchange</h2>
+        <hr class="rule rv" style="margin-top:34px">
+      </div>
+      <div>
+        <p class="lead rv">This is not a work trade. There is no four-hours-for-a-bed arrangement, because that decides the relationship before there is one.</p>
+        <p class="muted rv">Come because something in you says yes. Meet us. Meet the land. Participate.</p>
+        <p class="muted rv">Someone can work twelve hours a day and never really join. Someone else works three, makes dinner, notices what needs attention, and it is simply obvious: you are part of this.</p>
+        <p class="muted rv">We do not know yet whether you belong here. Neither do you. There only needs to be enough resonance to enter the dance.</p>
+        <p class="lead rv" style="margin-top:40px">Maybe it lasts three days. Maybe twenty years. Either way, nobody failed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="section dark cta" id="participate">
+  <div class="wrap">
+    <p class="eyebrow rv">Your first step</p>
+    <h2 class="rv">Take Your First Step</h2>
+    <p class="rv">Tell us who you are and what pulled you here. That is the whole application.</p>
     <div class="cta-row rv">
-      <a class="btn on-dark" href="mailto:brieandbjorn@gmail.com?subject=Living%20Earth%20Village%20—%20I%20feel%20called"><span>brieandbjorn@gmail.com</span></a>
+      <a class="btn on-dark" href="#connect"><span>See Where You Fit In</span></a>
     </div>
   </div>
 </section>
@@ -970,12 +1042,12 @@ footer a:hover{color:var(--gold-light)}
     <p class="eyebrow rv">Connect</p>
     <h2 class="rv" style="max-width:16ch">We'd love to hear from you</h2>
     <div class="narrow" style="margin-top:30px">
-      <p class="lead rv">Whether you're curious about Villaging Life, interested in joining a gathering, bringing your gifts, supporting the vision, or simply starting a conversation, this is a place to reach out.</p>
+      <p class="lead rv">Whether you're curious about Living Earth Village, interested in joining a gathering, bringing your gifts, supporting the vision, or simply starting a conversation, this is a place to reach out.</p>
       <p class="muted rv">You don't have to know exactly how you fit. Begin with what feels alive for you.</p>
     </div>
-    <form class="connect-form rv" id="connect-form" aria-label="Connect with Villaging Life">
+    <form class="connect-form rv" id="connect-form" aria-label="Connect with Living Earth Village">
       <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <input type="hidden" name="_subject" value="Villaging Life — new connect submission">
+      <input type="hidden" name="_subject" value="Living Earth Village - new connect submission">
       <div class="f-row">
         <div class="field"><label for="cf-first">First name <span class="req">*</span></label><input id="cf-first" name="first" type="text" autocomplete="given-name" required></div>
         <div class="field"><label for="cf-last">Last name <span class="req">*</span></label><input id="cf-last" name="last" type="text" autocomplete="family-name" required></div>
@@ -997,7 +1069,7 @@ footer a:hover{color:var(--gold-light)}
         <label><input type="checkbox" name="interest" value="I'm simply feeling resonance and would love to start a conversation"><span>I'm simply feeling resonance and would love to start a conversation</span></label>
       </fieldset>
       <button type="submit" class="btn solid"><span>Submit</span></button>
-      <p class="form-thanks" id="form-thanks" role="status" hidden>Thank you. Your message is opening in your email — send it and we'll be in touch.</p>
+      <p class="form-thanks" id="form-thanks" role="status" hidden>Thank you. Your message is opening in your email - send it and we'll be in touch.</p>
     </form>
   </div>
 </section>
@@ -1028,7 +1100,7 @@ footer a:hover{color:var(--gold-light)}
         <li><a href="#villaging">What is villaging</a></li>
         <li><a href="#movement">The Movement</a></li>
         <li><a href="#why">Why now</a></li>
-        <li><a href="#participate">How to participate</a></li>
+        <li><a href="#join">How to participate</a></li>
         <li><a href="#belonging">On belonging</a></li>
         <li><a href="#ministers">The founders</a></li>
       </ul>
@@ -1046,6 +1118,33 @@ footer a:hover{color:var(--gold-light)}
     <span>In fellowship with <a href="https://templeofthegoldenlight.com" target="_blank" rel="noopener">Temple of the Golden Light</a></span>
   </div>
 </footer>
+
+<!-- persistent primary CTA -->
+<div class="pcta" id="pcta"><a href="#participate">See Where You Fit In</a></div>
+
+<script>
+(function(){
+  var pcta=document.getElementById('pcta'), hero=document.querySelector('.hero'),
+      watch=[document.getElementById('connect'),document.getElementById('participate')];
+  if(pcta){
+    var upd=function(){
+      var past = hero ? (hero.getBoundingClientRect().bottom < 40) : (window.scrollY>500);
+      var hide=false, vh=window.innerHeight;
+      watch.forEach(function(el){ if(el){ var r=el.getBoundingClientRect(); if(r.top<vh*0.85 && r.bottom>0) hide=true; } });
+      pcta.classList.toggle('show', past && !hide);
+    };
+    window.addEventListener('scroll',upd,{passive:true});
+    window.addEventListener('resize',upd);
+    upd();
+  }
+  console.log('%cLiving Earth Village - MEDIA TODO (client assets still needed)','font-weight:bold');
+  console.log('1. Villaging grid: replace images/villaging-01..06.jpg with 6 real photos matching each line (placeholders in use).');
+  console.log('2. Tour: replace video slot 1 (videos/main-tour.mp4) with the stronger clip. Keep tour-2 and tour-3.');
+  console.log('3. Photo gallery: more variety coming - reel slots wired (images/gallery/g1..g12.jpg).');
+  console.log('4. Founders: awaiting one clean photo each of Bjorn and Brie.');
+  console.log('5. Reserve a slot near the top for the Bjorn + Brie vision video.');
+})();
+</script>
 
 <script>
 (function(){
@@ -1090,10 +1189,10 @@ footer a:hover{color:var(--gold-light)}
 </script>
 <script>
 (function(){
-  /* Edit dates/labels/descriptions here — the whole timeline is generated from this array. */
+  /* Edit dates/labels/descriptions here - the whole timeline is generated from this array. */
   var ROADMAP = [
     { when:"In progress",                   title:"Cabin", status:"In progress", sym:"cabin",
-      desc:"The first permanent structure — shelter to live, work, and winter on the land." },
+      desc:"The first permanent structure - shelter to live, work, and winter on the land." },
     { when:"~1 month",                      title:"Well drilling", status:"Planned", sym:"well",
       desc:"A reliable water source drawn from deep beneath the property." },
     { when:"~3 months",                     title:"Pole shed barn and studio", status:"Planned", sym:"barn",
@@ -1102,12 +1201,12 @@ footer a:hover{color:var(--gold-light)}
       desc:"Restoring the natural spring at its source. Begins once funding lands." },
     { when:"Ongoing",                       title:"Fencing removal and land reclamation", status:"Ongoing", sym:"sprout",
       desc:"Clearing old fence lines and letting the land return to itself." },
-    { when:"~3–6 months",                   title:"Bell tent platforms", status:"Planned", sym:"tent",
+    { when:"~3-6 months",                   title:"Bell tent platforms", status:"Planned", sym:"tent",
       desc:"Raised platforms for seasonal canvas lodging and guests." },
     { when:"~6 months",                     title:"Community kitchen, bathrooms, and deck", status:"Planned", sym:"pot",
       desc:"Shared amenities to cook, gather, and stay together." },
-    { when:"Long term",                     title:"Temple — platform phase, then structure", status:"Planned", sym:"temple",
-      desc:"A place of stillness, built in phases — beginning with the platform." }
+    { when:"Long term",                     title:"Temple - platform phase, then structure", status:"Planned", sym:"temple",
+      desc:"A place of stillness, built in phases - beginning with the platform." }
   ];
   var SYM = {
     cabin:'<path d="M12 32 L32 15 L52 32"/><path d="M17 30 V51 H47 V30"/><path d="M27 51 V39 H37 V51"/>',
@@ -1188,7 +1287,7 @@ footer a:hover{color:var(--gold-light)}
       if(btn){ btn.disabled = true; }
       fetch(FORMSPREE, { method:'POST', body:data, headers:{ 'Accept':'application/json' } })
         .then(function(r){
-          if(r.ok){ form.reset(); showThanks('Thank you. Your message is on its way — we’ll be in touch.'); }
+          if(r.ok){ form.reset(); showThanks('Thank you. Your message is on its way - we’ll be in touch.'); }
           else { showThanks('Something went wrong sending that. Please email brieandbjorn@gmail.com directly.'); if(btn){ btn.disabled = false; } }
         })
         .catch(function(){ showThanks('Something went wrong sending that. Please email brieandbjorn@gmail.com directly.'); if(btn){ btn.disabled = false; } });
@@ -1204,7 +1303,7 @@ footer a:hover{color:var(--gold-light)}
       '\nNews & updates: ' + news +
       '\n\nAbout them:\n' + g('message') +
       (interests.length ? ('\n\nInterested in:\n- ' + interests.join('\n- ')) : '');
-    var subject = 'Villaging Life — Connect: ' + g('first') + ' ' + g('last');
+    var subject = 'Living Earth Village - Connect: ' + g('first') + ' ' + g('last');
     window.location.href = 'mailto:brieandbjorn@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     showThanks();
   });
