@@ -368,6 +368,15 @@ h1,h2,.statement .big{font-family:var(--hero-display)}
 @keyframes reel{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.reel{overflow-x:auto}.reel-track{animation:none}}
 
+/* photo gallery - masonry */
+.gallery{margin-top:clamp(48px,6vw,84px);column-count:4;column-gap:clamp(12px,1.4vw,18px)}
+@media(max-width:1100px){.gallery{column-count:3}}
+@media(max-width:760px){.gallery{column-count:2}}
+@media(max-width:440px){.gallery{column-count:1}}
+.gallery img{width:100%;height:auto;display:block;margin:0 0 clamp(12px,1.4vw,18px);border-radius:4px;
+  box-shadow:0 16px 44px rgba(0,0,0,.34);break-inside:avoid;transition:transform .45s ease,box-shadow .45s ease}
+.gallery img:hover{transform:translateY(-4px);box-shadow:0 22px 54px rgba(0,0,0,.42)}
+
 /* video reel - take a tour (manual scroll; add more .vcard blocks later) */
 .vreel{display:flex;gap:clamp(16px,2vw,28px);margin-top:clamp(40px,5vw,64px);
   overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:8px}
@@ -567,7 +576,7 @@ footer a:hover{color:var(--gold-light)}
   </a>
   <nav class="navlinks" aria-label="Primary">
     <a href="#villaging">What is villaging</a>
-    <a href="#movement">The Movement</a>
+    <a href="#movement">The land</a>
     <a href="#why">Why now</a>
     <a href="#join">Participate</a>
     <a href="#belonging">Belonging</a>
@@ -632,18 +641,17 @@ footer a:hover{color:var(--gold-light)}
 
 <section class="section" id="villaging">
   <div class="wrap">
-    <p class="eyebrow rv">01 - The word</p>
-    <h2 class="rv" style="max-width:12ch">What is villaging?</h2>
-    <div class="narrow" style="margin-top:30px">
-      <p class="lead rv">Villaging is not a program. It is what happens when people stop living separately.</p>
-    </div>
-    <div class="vgrid">
-      <figure class="vg rv"><img src="images/villaging-01.jpg" alt="Cooking dinner for everyone, then eating together at one long table" loading="lazy" decoding="async"><figcaption><span class="vg-n">01</span> Cooking dinner for everyone, then eating it together at one long table.</figcaption></figure>
-      <figure class="vg rv"><img src="images/villaging-02.jpg" alt="Raising a structure that was not there this morning" loading="lazy" decoding="async"><figcaption><span class="vg-n">02</span> Raising a structure that was not there this morning.</figcaption></figure>
-      <figure class="vg rv"><img src="images/villaging-03.jpg" alt="Singing around the fire" loading="lazy" decoding="async"><figcaption><span class="vg-n">03</span> Singing around the fire until nobody is keeping track of time.</figcaption></figure>
-      <figure class="vg rv"><img src="images/villaging-04.jpg" alt="Hands in the soil, planting" loading="lazy" decoding="async"><figcaption><span class="vg-n">04</span> Hands in the soil, planting what we will be eating in four months.</figcaption></figure>
-      <figure class="vg rv"><img src="images/villaging-05.jpg" alt="Sitting with someone through the hard thing" loading="lazy" decoding="async"><figcaption><span class="vg-n">05</span> Sitting with someone through the hard thing instead of walking away.</figcaption></figure>
-      <figure class="vg rv"><img src="images/villaging-06.jpg" alt="Chainsaw in the morning, stillness at sunset" loading="lazy" decoding="async"><figcaption><span class="vg-n">06</span> Chainsaw in the morning. Stillness at sunset. Both in the same day.</figcaption></figure>
+    <div class="two">
+      <div class="side">
+        <p class="eyebrow rv">01 - The idea</p>
+        <h2 class="rv">What is<br>villaging?</h2>
+        <hr class="rule rv" style="margin-top:34px">
+      </div>
+      <div>
+        <p class="lead rv">Villaging is a way of living together, not apart.</p>
+        <p class="muted rv">Living Earth Village is a community and working homestead taking shape on twenty-five acres. The daily work of living - growing food, raising structures, cooking, and caring for the land and one another - is shared rather than carried alone.</p>
+        <p class="muted rv">It is a village in the old sense, made new: regenerative, resilient, and built on relationship. A place designed to hold real life, and to last.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -651,38 +659,30 @@ footer a:hover{color:var(--gold-light)}
 <!-- ============ THE MOVEMENT ============ -->
 <section class="section dark" id="movement">
   <div class="wrap">
-    <p class="eyebrow rv">02 - The Movement</p>
+    <p class="eyebrow rv">02 - The land</p>
     <h2 class="rv" style="max-width:14ch">It is happening now</h2>
     <div class="narrow" style="margin-top:34px">
-      <p class="lead rv">This is not an idea waiting to begin. It is already alive. People on the land, together, now.</p>
+      <p class="lead rv">This is not an idea waiting to begin. People are already on the land, doing the work.</p>
     </div>
-  </div>
-  <div class="reel rv" role="img" aria-label="Photographs from the land at Living Earth Village">
-    <div class="reel-track">
-      <img src="images/gallery/g1.jpg" alt="On the land at Living Earth Village" loading="lazy" decoding="async">
-      <img src="images/gallery/g2.jpg" alt="Gathering on the land" loading="lazy" decoding="async">
-      <img src="images/gallery/g3.jpg" alt="Time in the field" loading="lazy" decoding="async">
-      <img src="images/gallery/g4.jpg" alt="Together on the land" loading="lazy" decoding="async">
-      <img src="images/gallery/g5.jpg" alt="The land and those who tend it" loading="lazy" decoding="async">
-      <img src="images/gallery/g6.jpg" alt="A day in the field" loading="lazy" decoding="async">
-      <img src="images/gallery/g7.jpg" alt="On the land" loading="lazy" decoding="async">
-      <img src="images/gallery/g8.jpg" alt="On the land" loading="lazy" decoding="async">
-      <img src="images/gallery/g9.jpg" alt="On the land" loading="lazy" decoding="async">
-      <img src="images/gallery/g10.jpg" alt="On the land" loading="lazy" decoding="async">
-      <img src="images/gallery/g11.jpg" alt="On the land" loading="lazy" decoding="async">
-      <img src="images/gallery/g12.jpg" alt="On the land" loading="lazy" decoding="async">
-      <img src="images/gallery/g1.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <img src="images/gallery/g2.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <img src="images/gallery/g3.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <img src="images/gallery/g4.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <img src="images/gallery/g5.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <img src="images/gallery/g6.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <img src="images/gallery/g7.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <img src="images/gallery/g8.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <img src="images/gallery/g9.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <img src="images/gallery/g10.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <img src="images/gallery/g11.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <img src="images/gallery/g12.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="gallery rv" role="group" aria-label="Photographs from the land at Living Earth Village">
+      <img src="images/site/p01.jpg" alt="On the land at Living Earth Village" loading="lazy" decoding="async">
+      <img src="images/site/p02.jpg" alt="On the land at Living Earth Village" loading="lazy" decoding="async">
+      <img src="images/site/p03.jpg" alt="On the land at Living Earth Village" loading="lazy" decoding="async">
+      <img src="images/site/p04.jpg" alt="On the land at Living Earth Village" loading="lazy" decoding="async">
+      <img src="images/site/p05.jpg" alt="On the land at Living Earth Village" loading="lazy" decoding="async">
+      <img src="images/site/p06.jpg" alt="On the land at Living Earth Village" loading="lazy" decoding="async">
+      <img src="images/site/p07.jpg" alt="On the land at Living Earth Village" loading="lazy" decoding="async">
+      <img src="images/site/p08.jpg" alt="On the land at Living Earth Village" loading="lazy" decoding="async">
+      <img src="images/site/p09.jpg" alt="On the land at Living Earth Village" loading="lazy" decoding="async">
+      <img src="images/site/p10.jpg" alt="On the land at Living Earth Village" loading="lazy" decoding="async">
+      <img src="images/site/p11.jpg" alt="On the land at Living Earth Village" loading="lazy" decoding="async">
+      <img src="images/site/p12.jpg" alt="On the land at Living Earth Village" loading="lazy" decoding="async">
+      <img src="images/site/p13.jpg" alt="On the land at Living Earth Village" loading="lazy" decoding="async">
+      <img src="images/site/p14.jpg" alt="On the land at Living Earth Village" loading="lazy" decoding="async">
+      <img src="images/site/p15.jpg" alt="On the land at Living Earth Village" loading="lazy" decoding="async">
+      <img src="images/site/p16.jpg" alt="On the land at Living Earth Village" loading="lazy" decoding="async">
+      <img src="images/site/p17.jpg" alt="On the land at Living Earth Village" loading="lazy" decoding="async">
+      <img src="images/site/p18.jpg" alt="On the land at Living Earth Village" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -1098,7 +1098,7 @@ footer a:hover{color:var(--gold-light)}
       <p class="f-h">Explore</p>
       <ul class="f-list">
         <li><a href="#villaging">What is villaging</a></li>
-        <li><a href="#movement">The Movement</a></li>
+        <li><a href="#movement">The land</a></li>
         <li><a href="#why">Why now</a></li>
         <li><a href="#join">How to participate</a></li>
         <li><a href="#belonging">On belonging</a></li>
@@ -1138,11 +1138,10 @@ footer a:hover{color:var(--gold-light)}
     upd();
   }
   console.log('%cLiving Earth Village - MEDIA TODO (client assets still needed)','font-weight:bold');
-  console.log('1. Villaging grid: replace images/villaging-01..06.jpg with 6 real photos matching each line (placeholders in use).');
-  console.log('2. Tour: replace video slot 1 (videos/main-tour.mp4) with the stronger clip. Keep tour-2 and tour-3.');
-  console.log('3. Photo gallery: more variety coming - reel slots wired (images/gallery/g1..g12.jpg).');
-  console.log('4. Founders: awaiting one clean photo each of Bjorn and Brie.');
-  console.log('5. Reserve a slot near the top for the Bjorn + Brie vision video.');
+  console.log('1. Tour: replace video slot 1 (videos/main-tour.mp4) with the stronger clip. Keep tour-2 and tour-3.');
+  console.log('2. Founders: awaiting one clean photo each of Bjorn and Brie.');
+  console.log('3. Reserve a slot near the top for the Bjorn + Brie vision video.');
+  console.log('Gallery: all 18 shared photos are live (images/site/p01..p18.jpg) - add more anytime.');
 })();
 </script>
 
