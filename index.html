@@ -412,6 +412,7 @@ h1,h2,.statement .big{font-family:var(--hero-display)}
 .tl-dot-wrap{display:flex;justify-content:center;padding-top:2px}
 .tl-dot{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--line);background:var(--cream);transition:all .3s ease}
 .tl-row.first .tl-dot{border-color:var(--gold);background:var(--gold)}
+.tl-row.done .tl-dot{border-color:var(--sage-mid);background:var(--sage-mid)}
 .tl-row.active .tl-dot{border-color:var(--gold);background:var(--gold);transform:scale(1.25);box-shadow:0 0 0 4px rgba(169,135,63,.16)}
 .tl-when{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
 .tl-title{font-family:var(--read);font-size:clamp(20px,1.7vw,23px);line-height:1.2;margin-top:3px;color:var(--ink);transition:color .3s ease}
@@ -487,6 +488,14 @@ h1,h2,.statement .big{font-family:var(--hero-display)}
 .ministers{display:grid;grid-template-columns:auto 1fr;gap:clamp(30px,5vw,72px);align-items:center}
 @media(max-width:760px){.ministers{grid-template-columns:1fr;text-align:left}}
 .ministers .m-mark{width:clamp(130px,17vw,210px)}
+/* founders - two portrait layout */
+.founders{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px);margin-top:clamp(40px,5vw,64px);max-width:760px}
+@media(max-width:560px){.founders{grid-template-columns:1fr;max-width:380px;margin-left:auto;margin-right:auto}}
+.founder{margin:0}
+.founder img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border-radius:4px;box-shadow:0 22px 50px -30px rgba(42,53,36,.45)}
+.founder figcaption{margin-top:16px;display:flex;flex-direction:column;gap:4px}
+.f-name{font-family:var(--serif);font-size:clamp(22px,2vw,28px);color:var(--ink)}
+.f-role{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
 
 /* cta */
 .cta{text-align:center;position:relative;overflow:hidden;
@@ -533,6 +542,13 @@ footer a:hover{color:var(--gold-light)}
 @keyframes vl-breath{0%,100%{transform:scale(1)}50%{transform:scale(1.015)}}
 /* connect form + tour CTA */
 .tour-cta{margin-top:clamp(32px,4vw,48px)}
+/* current needs grid (proposal section) */
+.needs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:28px;border:1px solid var(--line)}
+@media(max-width:1000px){.needs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.needs{grid-template-columns:1fr}}
+.need{background:var(--cream);padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;gap:12px}
+.need h3{font-size:clamp(21px,1.8vw,27px);color:var(--ink)}
+.need p{font-size:clamp(17px,1.3vw,20px);color:var(--body);line-height:1.5}
 .connect-form{max-width:720px;margin-top:clamp(36px,4vw,54px);display:flex;flex-direction:column;gap:clamp(22px,2.4vw,30px)}
 .connect-form .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2vw,26px)}
@@ -978,28 +994,20 @@ footer a:hover{color:var(--gold-light)}
 <!-- ============ MINISTERS ============ -->
 <section class="section cream" id="ministers">
   <div class="wrap">
-    <div class="ministers">
-      <div class="m-mark rv">
-        <svg viewBox="0 0 200 200" role="img" aria-hidden="true">
-          <circle cx="100" cy="100" r="72" fill="none" stroke="#A9873F" stroke-width="1.5"/>
-          <g fill="none" stroke="#8A9A82" stroke-width="1.5" stroke-linecap="round">
-            <path d="M 60 78 A 42 42 0 0 1 140 78"/><path d="M 74 80 A 28 28 0 0 1 126 80"/>
-          </g>
-          <g fill="none" stroke="#A9873F" stroke-width="1.7" stroke-linecap="round">
-            <path d="M 100 126 L 100 88"/>
-            <path d="M 100 104 A 13 13 0 0 0 85 92 A 13 13 0 0 0 100 104"/>
-            <path d="M 100 99 A 13 13 0 0 1 115 87 A 13 13 0 0 1 100 99"/>
-          </g>
-          <g fill="none" stroke="#8A9A82" stroke-width="1.6" stroke-linecap="round"><path d="M 60 130 A 52 52 0 0 0 140 130"/></g>
-        </svg>
-      </div>
-      <div>
-        <!-- SECTION NAME [NEEDS WORD]: "The founders" is a placeholder pending Bjorn's word choice -->
-        <p class="eyebrow rv">08 - The founders</p>
-        <h2 class="rv">Brie &amp; Bjorn</h2>
-        <p class="lead rv" style="margin-top:28px">The founders of Living Earth Village.</p>
-        <p class="muted rv">Embodying the divine flow as it moves through them as uncompromised life - effortlessly manifesting as joy, ease, abundance and peace.</p>
-      </div>
+    <p class="eyebrow rv">08 - The founders</p>
+    <h2 class="rv">Brie &amp; Bjorn</h2>
+    <div class="narrow" style="margin-top:28px">
+      <p class="lead rv">The founders of Living Earth Village. They have personally funded the project and begun the work on the land - clearing the fields, installing the spring, and raising the first structures.</p>
+    </div>
+    <div class="founders">
+      <figure class="founder rv">
+        <img src="images/founders/brie.jpg" alt="Brie, co-founder of Living Earth Village" loading="lazy" decoding="async">
+        <figcaption><span class="f-name">Brie</span><span class="f-role">Co-founder</span></figcaption>
+      </figure>
+      <figure class="founder rv">
+        <img src="images/founders/bjorn.jpg" alt="Bjorn, co-founder of Living Earth Village" loading="lazy" decoding="async">
+        <figcaption><span class="f-name">Bjorn</span><span class="f-role">Co-founder</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -1021,6 +1029,25 @@ footer a:hover{color:var(--gold-light)}
         <p class="lead rv" style="margin-top:40px">Maybe it lasts three days. Maybe twenty years. Either way, nobody failed.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ DO YOU HAVE A PROPOSAL ============ -->
+<section class="section cream" id="proposal">
+  <div class="wrap">
+    <p class="eyebrow rv">Bring a proposal</p>
+    <h2 class="rv" style="max-width:16ch">Do you have a proposal?</h2>
+    <div class="narrow" style="margin-top:30px">
+      <p class="lead rv">We are not looking for volunteers to manage. We are looking for people who know what they do and arrive with a proposal: what you will build, what you need to build it, and how it serves the land.</p>
+    </div>
+    <p class="rv" style="margin-top:26px;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)">What the land needs right now</p>
+    <div class="needs">
+      <div class="need rv"><h3>Regenerative sanitation</h3><p>Permaculture builders to design and raise composting outhouses - the most pressing next build.</p></div>
+      <div class="need rv"><h3>The community kitchen</h3><p>Designers and builders for the shared kitchen, bathrooms, and deck.</p></div>
+      <div class="need rv"><h3>The temple space</h3><p>Hands to develop the temple, from platform to structure.</p></div>
+      <div class="need rv"><h3>A documentary</h3><p>A filmmaker to document the transformation of the land as it happens.</p></div>
+    </div>
+    <div class="tour-cta rv"><a class="btn solid" href="#connect"><span>Send a proposal</span></a></div>
   </div>
 </section>
 
@@ -1057,6 +1084,7 @@ footer a:hover{color:var(--gold-light)}
       <div class="field"><label for="cf-msg">We'd love to hear about you, your gifts, what excites you, and how you imagine participating. <span class="req">*</span></label><textarea id="cf-msg" name="message" rows="6" required></textarea></div>
       <fieldset class="checks">
         <legend>…or check the boxes that speak to you</legend>
+        <label><input type="checkbox" name="interest" value="I have a proposal to bring"><span>I have a proposal to bring</span></label>
         <label><input type="checkbox" name="interest" value="I'd love to come to a gathering"><span>I'd love to come to a gathering</span></label>
         <label><input type="checkbox" name="interest" value="I'd like to join a workday"><span>I'd like to join a workday</span></label>
         <label><input type="checkbox" name="interest" value="I'm interested in permaculture, farm, or care for animals"><span>I'm interested in permaculture, farm, or care for animals</span></label>
@@ -1190,21 +1218,21 @@ footer a:hover{color:var(--gold-light)}
 (function(){
   /* Edit dates/labels/descriptions here - the whole timeline is generated from this array. */
   var ROADMAP = [
-    { when:"In progress",                   title:"Cabin", status:"In progress", sym:"cabin",
-      desc:"The first permanent structure - shelter to live, work, and winter on the land." },
-    { when:"~1 month",                      title:"Well drilling", status:"Planned", sym:"well",
-      desc:"A reliable water source drawn from deep beneath the property." },
-    { when:"~3 months",                     title:"Pole shed barn and studio", status:"Planned", sym:"barn",
-      desc:"Covered workspace for tools, materials, and making." },
-    { when:"~3 months · funding dependent", title:"Spring head remediation", status:"Funding dependent", sym:"spring",
-      desc:"Restoring the natural spring at its source. Begins once funding lands." },
-    { when:"Ongoing",                       title:"Fencing removal and land reclamation", status:"Ongoing", sym:"sprout",
-      desc:"Clearing old fence lines and letting the land return to itself." },
-    { when:"~3-6 months",                   title:"Bell tent platforms", status:"Planned", sym:"tent",
+    { when:"Done",        title:"Spring water system", status:"Complete", sym:"spring",
+      desc:"A gravity-fed spring now supplies the land with pure running water - no pumps, no power, no filtration." },
+    { when:"Done",        title:"Fields cleared, roads built", status:"Complete", sym:"sprout",
+      desc:"The fields are mowed, trees cleared, and a new road runs to the top of the property." },
+    { when:"In progress", title:"The first homes", status:"In progress", sym:"cabin",
+      desc:"The first permanent structures are going up on the hill, built by the people who live here." },
+    { when:"In progress", title:"Barn and studio", status:"In progress", sym:"barn",
+      desc:"Covered workspace for tools, materials, and making - the platform is underway." },
+    { when:"Next up",     title:"Outhouses", status:"Next build", sym:"well",
+      desc:"The most pressing next build: composting, regenerative outhouses." },
+    { when:"~3-6 months", title:"Bell tent platforms", status:"Planned", sym:"tent",
       desc:"Raised platforms for seasonal canvas lodging and guests." },
-    { when:"~6 months",                     title:"Community kitchen, bathrooms, and deck", status:"Planned", sym:"pot",
-      desc:"Shared amenities to cook, gather, and stay together." },
-    { when:"Long term",                     title:"Temple - platform phase, then structure", status:"Planned", sym:"temple",
+    { when:"~6 months",   title:"Community kitchen, bathrooms, and deck", status:"Planned", sym:"pot",
+      desc:"Shared space to cook, gather, and stay together." },
+    { when:"Long term",   title:"Temple - platform phase, then structure", status:"Planned", sym:"temple",
       desc:"A place of stillness, built in phases - beginning with the platform." }
   ];
   var SYM = {
@@ -1225,7 +1253,7 @@ footer a:hover{color:var(--gold-light)}
 
   ROADMAP.forEach(function(m,i){
     var row = document.createElement('div');
-    row.className = 'tl-row' + (i===0 ? ' first' : '');
+    row.className = 'tl-row' + (i===0 ? ' first' : '') + (m.status==='Complete' ? ' done' : '');
     row.tabIndex = 0; row.setAttribute('role','tab');
     row.style.transitionDelay = Math.min(i*70,520)+'ms';
     row.innerHTML = '<div class="tl-dot-wrap"><span class="tl-dot"></span></div>' +
@@ -1241,7 +1269,7 @@ footer a:hover{color:var(--gold-light)}
     if(!touched){ touched = true; if(hint) hint.classList.add('gone'); }
     rows.forEach(function(r,j){ r.classList.toggle('active', j===i); });
     var m = ROADMAP[i];
-    var sc = i===0 ? 'var(--gold)' : (m.status==='Ongoing' ? 'var(--sage-mid)' : 'var(--body-mute)');
+    var sc = m.status==='Complete' ? 'var(--sage-mid)' : (m.status==='In progress' ? 'var(--gold)' : 'var(--body-mute)');
     card.innerHTML =
       '<div class="rc-top"><div class="rc-n">'+pad(i+1)+' <span>/ '+pad(n)+'</span></div>' +
       '<div class="rc-status" style="color:'+sc+'">'+m.status+'</div></div>' +
